@@ -16,7 +16,9 @@ class StrChineseMacrosServiceProvider extends ServiceProvider
             ->each(fn($class, $macro) => Str::macro($macro, app($class)()));
     }
 
-    #[ArrayShape(['parseAddress' => "string"])]
+    #[ArrayShape([
+        'parseAddress' => "string"
+    ])]
     private function macros(): array
     {
         return [

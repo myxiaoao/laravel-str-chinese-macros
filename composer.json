@@ -26,11 +26,19 @@
             "Cooper\\StrChineseMacros\\Test\\": "tests"
         }
     },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
     "extra": {
         "laravel": {
             "providers": [
                 "Cooper\\StrChineseMacros\\StrChineseMacrosServiceProvider"
             ]
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

@@ -12,15 +12,15 @@ class TestCase extends OrchestraTestCase
         parent::setUp();
     }
 
+    public function tearDown(): void
+    {
+        parent::tearDown();
+    }
+
     protected function getPackageProviders($app): array
     {
         return [
             StrChineseMacrosServiceProvider::class
         ];
-    }
-
-    public function tearDown(): void
-    {
-        parent::tearDown();
     }
 }
