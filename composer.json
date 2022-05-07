@@ -1,0 +1,36 @@
+{
+    "name": "cooper/laravel-str-chinese-macros",
+    "description": "Laravel Str Chinese Macros",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^8.0 || ^9.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "6.*"
+    },
+    "authors": [
+        {
+            "name": "cooper",
+            "email": "myxiaoao@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Cooper\\StrChineseMacros\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Cooper\\StrChineseMacros\\Test\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Cooper\\StrChineseMacros\\StrChineseMacrosServiceProvider"
+            ]
+        }
+    }
+}
