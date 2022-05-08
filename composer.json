@@ -23,14 +23,16 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Cooper\\StrChineseMacros\\Test\\": "tests"
+            "Cooper\\StrChineseMacros\\Test\\": "tests",
+            "Cooper\\StrChineseMacros\\Command\\": "command"
         }
     },
     "config": {
         "sort-packages": true
     },
     "scripts": {
-        "test": "vendor/bin/phpunit"
+        "test": "vendor/bin/phpunit",
+        "generate-ide-helpers": "./cmd generate-ide-helpers"
     },
     "extra": {
         "laravel": {

@@ -17,12 +17,14 @@ class StrChineseMacrosServiceProvider extends ServiceProvider
     }
 
     #[ArrayShape([
-        'parseAddress' => "string"
+        'parseAddress' => "string",
+        'isChinese' => 'string'
     ])]
-    private function macros(): array
+    public function macros(): array
     {
         return [
             'parseAddress' => \Cooper\StrChineseMacros\Macros\ParseAddress::class,
+            'isChinese' => \Cooper\StrChineseMacros\Macros\IsChinese::class,
         ];
     }
 }
