@@ -2,7 +2,6 @@
 
 namespace Cooper\StrChineseMacros;
 
-use Illuminate\Support\Str;
 use JetBrains\PhpStorm\ArrayShape;
 
 class Address
@@ -76,7 +75,7 @@ class Address
     {
         preg_match('/(.*?('.$pregRule.'))/u', $address, $matches);
         $result = $matches[count($matches) - 2] ?? '';
-        $address = Str::replace($result, '', $address);
+        $address = str_replace($result, '', $address);
 
         return $result;
     }
