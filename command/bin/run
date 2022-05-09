@@ -6,7 +6,7 @@ use Illuminate\Console\Application;
 use Illuminate\Container\Container;
 use Illuminate\Events\Dispatcher;
 
-include './vendor/autoload.php';
+include __DIR__.'/../../vendor/autoload.php';
 
 $container = new Container();
 $app = new Application($container, new Dispatcher($container), '1.0');

@@ -13,36 +13,35 @@ class GenerateIdeHelpers extends Command
 
     public function __invoke()
     {
-        $macros = (new StrChineseMacrosServiceProvider(app()))->macros();
+        $macros = (new StrChineseMacrosServiceProvider(app()))->macros;
         $factory = DocBlockFactory::createInstance();
 
-        $files = collect([]);
+        $content = [];
         foreach ($macros as $name => $macro) {
             try {
-                $class = new \ReflectionClass($macro);
+                $reflection = new \ReflectionClass($macro);
             } catch (\ReflectionException $e) {
+                $this->error($e->getMessage());
                 continue;
             }
 
-            $docblock = $factory->create($class->getDocComment());
-            $tags = $docblock->getTagsWithTypeByName('param');
-
+            $docBlock = $factory->create($reflection->getDocComment());
+            $tags = $docBlock->getTagsWithTypeByName('param');
             $param = '';
             foreach ($tags as $tag) {
-                $param .= $tag->getType().' $'.$tag->getVariableName();
+                $param .= $tag->getType().' $'.$tag->getVariableName().',';
             }
-            $files[] = '    *  @method '.$name.'('.$param.')';
+            $content[] = '    *  @method '.$name.'('.rtrim($param, ',').')';
         }
 
         $header = $this->getFileHeader();
-        $content = $files->implode(PHP_EOL);
+        $content = implode(PHP_EOL, $content);
         $footer = $this->getFileFooter();
 
         file_put_contents($this->getPath('_ide_helper.php'), $header.$content.$footer);
 
         $this->info('Generates the IDE helpers done.');
     }
-
 
     private function getPath(string $path = null): string
     {

@@ -32,7 +32,7 @@
     },
     "scripts": {
         "test": "vendor/bin/phpunit",
-        "generate-ide-helpers": "./cmd generate-ide-helpers"
+        "generate-ide-helpers": "command/bin/run generate-ide-helpers"
     },
     "extra": {
         "laravel": {
