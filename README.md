@@ -1,7 +1,7 @@
 # Laravel Str Chinese Macros
 ![Packagist Version](https://img.shields.io/packagist/v/cooper/laravel-str-chinese-macros)
 ![Packagist License](https://img.shields.io/packagist/l/cooper/laravel-str-chinese-macros)
-![GitHub Main Workflow Status](https://img.shields.io/github/workflow/status/myxiaoao/laravel-str-chinese-macros/Tests/master)
+![GitHub Main Workflow Status](https://img.shields.io/github/actions/workflow/status/myxiaoao/laravel-str-chinese-macros/run-tests.yml?branch=master)
 
 `Illuminate\Support\Str` 中文拓展包
 
